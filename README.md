@@ -1,4 +1,4 @@
-# MathChain WebWallet
+# DeltaChain WebWallet
 
 ## Project setup
 ```
