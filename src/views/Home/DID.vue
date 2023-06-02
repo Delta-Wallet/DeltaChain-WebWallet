@@ -25,7 +25,7 @@ export default {
 
       this.$loading(1);
 
-      const randomCode = "Address backup operation through Math Wallet";
+      const randomCode = "Address backup operation through deta Wallet";
 
       const signRes = await this.user
         .signMessage(this.account, randomCode)
@@ -34,20 +34,20 @@ export default {
           this.$toast(err.message, 3000);
         });
 
-      if (!signRes || !signRes.mathSign) {
+      if (!signRes || !signRes.detaSign) {
         this.$loading(0);
         return this.$toast(this.$t("sign_error"));
       }
 
       this.axios
         .post(
-          this.apiDomain + "apiPolka/mathDIDEmailBind?v=1.0",
+          this.apiDomain + "apiPolka/detaDIDEmailBind?v=1.0",
           this.webUtil.qsStringify({
             email: email,
             code: code,
-            mathAddr: this.account.address,
+            detaAddr: this.account.address,
             message: randomCode,
-            sign: signRes.mathSign,
+            sign: signRes.detaSign,
           })
         )
         .then((result) => {

@@ -33,7 +33,7 @@ export default {
       amount: "",
       destination: "",
       transferring: false,
-      tokenList: ["MATH"],
+      tokenList: ["deta"],
       transferFee:0,
     };
   },
@@ -57,9 +57,9 @@ export default {
         this.$toast(this.$t("transfer_amount_null"));
         return false;
       }
-      if (this.amount < Math.pow(10, -this.decimal)) {
+      if (this.amount < deta.pow(10, -this.decimal)) {
         this.$toast(
-          this.$t("transfer_amount_min") + Math.pow(10, -this.decimal)
+          this.$t("transfer_amount_min") + deta.pow(10, -this.decimal)
         );
         return false;
       }

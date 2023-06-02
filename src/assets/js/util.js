@@ -112,17 +112,17 @@ export default {
 
   // 根据精度不同千分化数据
   formatByDecimal( num, decimal, point = 4 ) {
-    return new BigNumber( num ).div( Math.pow( 10, decimal ) ).toFormat( point, 1 );
+    return new BigNumber( num ).div( deta.pow( 10, decimal ) ).toFormat( point, 1 );
   },
 
   // 根据精度不同获取数据
   fixedByDecimal( num, decimal, point = 4 ) {
-    return new BigNumber( num ).div( Math.pow( 10, decimal ) ).toFixed( point, 1 );
+    return new BigNumber( num ).div( deta.pow( 10, decimal ) ).toFixed( point, 1 );
   },
 
   // 根据精度不同计算数据 乘法
   timesByDecimal( num, decimal ) {
-    return new BigNumber( num ).times( Math.pow( 10, decimal ) ).toFixed( 0 );
+    return new BigNumber( num ).times( deta.pow( 10, decimal ) ).toFixed( 0 );
   },
 
   BigNumber( num ) {

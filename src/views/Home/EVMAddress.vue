@@ -26,7 +26,7 @@ export default {
         .post(
           this.apiDomain + "apiPolka/generateRandomStr?v=1.0",
           this.webUtil.qsStringify({
-            mathAddr: this.account.address,
+            detaAddr: this.account.address,
           })
         )
         .catch((err) => {
@@ -46,7 +46,7 @@ export default {
 
       if (
         !signRes ||
-        !signRes.mathSign ||
+        !signRes.detaSign ||
         !signRes.ethAddr ||
         !signRes.ethSign
       ) {
@@ -60,8 +60,8 @@ export default {
         .post(
           this.apiDomain + "apiPolka/verifyAndBindEVMAddress?v=1.0",
           this.webUtil.qsStringify({
-            mathAddr: this.account.address,
-            mathSign: signRes.mathSign,
+            detaAddr: this.account.address,
+            detaSign: signRes.detaSign,
             ethAddr: signRes.ethAddr,
             ethSign: signRes.ethSign,
             code: randomCode,

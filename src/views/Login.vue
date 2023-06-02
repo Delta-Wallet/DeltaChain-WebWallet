@@ -61,10 +61,10 @@ export default {
     },
     noExtension() {
       this.$confirm({
-        info: this.$t("noMathExtension"),
+        info: this.$t("nodetaExtension"),
         yesBtn: this.$t("download")
       }).then(()=>{
-        window.open("https://mathwallet.org");
+        window.open("https://detawallet.org");
         window.location.reload();
       })
     },

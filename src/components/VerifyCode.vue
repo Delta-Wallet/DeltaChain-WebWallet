@@ -60,7 +60,7 @@ export default {
 
           this.axios
             .post(
-              this.apiDomain + "apiPolka/getMathDIDEmailCode?v=1.0",
+              this.apiDomain + "apiPolka/getdetaDIDEmailCode?v=1.0",
               this.webUtil.qsStringify(params)
             )
             .then((res) => {

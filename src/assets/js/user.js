@@ -7,7 +7,7 @@ import {
   web3FromSource,
 } from "@polkadot/extension-dapp";
 import util from "./util";
-web3Enable("mathchain");
+web3Enable("detachain");
 
 class User {
   constructor() {
@@ -100,16 +100,16 @@ class User {
   // 签名操作
   async signMessage(account, str = "Hello world") {
     const injector = await web3FromSource(account.meta.source);
-    // let signRes = await injector.signer.signMessageByMath(
+    // let signRes = await injector.signer.signMessageBydeta(
     //   account.address,
     //   str,
-    //   "Sign message by Math",
+    //   "Sign message by deta",
     //   false
     // );
     let signRes = await injector.signer.signRaw({
         address: account.address,
         data: str,
-        type: "mathchain"
+        type: "detachain"
       }
     );
     let signatures = signRes ? signRes.signatures : null;
@@ -120,8 +120,8 @@ class User {
           result.ethAddr = v.address;
           result.ethSign = v.signature;
         } else {
-          result.mathAddr = v.address;
-          result.mathSign = v.signature;
+          result.detaAddr = v.address;
+          result.detaSign = v.signature;
         }
       });
     }
@@ -176,7 +176,7 @@ class User {
           return util
             .BigNumber(daily_limit)
             .minus(result.daily_info)
-            .div(Math.pow(10, decimals))
+            .div(deta.pow(10, decimals))
             .toFormat(4);
         }
       }

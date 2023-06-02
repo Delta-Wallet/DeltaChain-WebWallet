@@ -44,7 +44,7 @@
 export default {
   data() {
     return {
-      tokenList: ["MATH"],
+      tokenList: ["deta"],
       amount: "",
       signing: false,
       remainLimit: 1000,

@@ -1,14 +1,14 @@
 <template>
   <nav>
-    <a class="navbar-brand" href="https://mathwallet.org" target="_blank">
+    <a class="navbar-brand" href="https://detawallet.org" target="_blank">
       <img
-        src="@/assets/img/icons/MathWallet_Logo_Horizontal_White.png"
+        src="@/assets/img/icons/detaWallet_Logo_Horizontal_White.png"
         height="44"
       />
     </a>
     <ul class="navbar-nav">
       <li>
-        <a href="https://mathwallet.org" class="mobile">
+        <a href="https://detawallet.org" class="mobile">
           <img src="@/assets/img/icons/phone_blue@2x.png" height="16" />
           <span>APP</span>
         </a>

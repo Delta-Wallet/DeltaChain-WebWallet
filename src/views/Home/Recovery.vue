@@ -38,7 +38,7 @@ export default {
       this.axios
         .get(
           this.apiDomain +
-            "apiPolka/getMathDIDBoundEmail?mathAddr=" +
+            "apiPolka/getdetaDIDBoundEmail?detaAddr=" +
             this.address
         )
         .then((res) => {
@@ -63,7 +63,7 @@ export default {
 
       this.$loading(1);
 
-      const randomCode = "Address recovery operation through Math Wallet";
+      const randomCode = "Address recovery operation through deta Wallet";
 
       const signRes = await this.user
         .signMessage(this.account, randomCode)
@@ -72,20 +72,20 @@ export default {
           this.$toast(err.message, 3000);
         });
 
-      if (!signRes || !signRes.mathSign) {
+      if (!signRes || !signRes.detaSign) {
         this.$loading(0);
         return this.$toast(this.$t("sign_error"));
       }
 
       this.axios
         .post(
-          this.apiDomain + "apiPolka/mathAddressRecover",
+          this.apiDomain + "apiPolka/detaAddressRecover",
           this.webUtil.qsStringify({
             currentAddr: this.account.address,
             code: code,
             targetAddr: this.address,
             message: randomCode,
-            sign: signRes.mathSign,
+            sign: signRes.detaSign,
           })
         )
         .then((result) => {

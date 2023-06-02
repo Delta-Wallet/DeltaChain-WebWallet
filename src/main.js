@@ -27,7 +27,7 @@ Vue.mixin({
       user: user,
       webUtil: webUtil,
       axios: axios,
-      symbol: "MATH",
+      symbol: "deta",
       chain: "Galois",
       decimals: 18,
       chainId: 19009,
@@ -120,7 +120,7 @@ Vue.mixin({
       this.axios
         .get(
           this.apiDomain +
-            "apiPolka/getMathDIDBoundEmail?mathAddr=" +
+            "apiPolka/getdetaDIDBoundEmail?detaAddr=" +
             this.account.address
         )
         .then((res) => {

@@ -24,7 +24,7 @@ export default {
       let nc_token = [
         "appkey",
         new Date().getTime(),
-        Math.random(),
+        deta.random(),
       ].join(":");
 
       let nc_option = {
